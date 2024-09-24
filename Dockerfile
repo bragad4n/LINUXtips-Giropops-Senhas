@@ -7,6 +7,6 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 COPY . .
 RUN pip install --no-cache-dir -r requirements.txt
-EXPOSE 80
+EXPOSE 5000
 ENV REDIS_HOST=localhost
 CMD service redis-server start && flask run --host=0.0.0.0
